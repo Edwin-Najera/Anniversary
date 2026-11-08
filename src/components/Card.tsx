@@ -1,41 +1,35 @@
+import { letter } from "./letter";
 import "./global.css";
 
 function Card() {
   return (
-    <div className="card w-75 p-2">
-      <div className="row g-1">
-        <div className="col-md-4 p-2 d-flex align-items-around justify-content-around">
-          <img src="" alt="layla" className="img-fluid heart" />
-        </div>
-        <div className="col-md-8">
-          <div className="card-body">
-            <p className="card-text">
-              Hi baby, first and foremost, I love you with all my heart. I
-              appreciate all that you do and everything that you continue to do.
-              You're beatiful, gorgeous, smart, and always on point with
-              everything that you do. I'm grateful for everyday that I'm able to
-              spend with you because I know that its gonna be great. I love all
-              and everything that you do because I know it'll be another memory
-              that I can cherish. With how little life gives us, I know that you
-              will always be there to make it great, to make it amazing. You are
-              my soul, my beating heart, I know with you my day will never be
-              boring. Whether we just sit alone or we talk, and talk, and talk,
-              the days with you are always days that I look forward to. You're
-              bubbly energy is so mesmerizing that I feel like it transfers out
-              onto me. I don't have to hesitate for any little bit when I'm with
-              you. I can be myself, not feel judged, feel protected. I know I am
-              a little bit quiet but with you I feel like I can talk about my
-              thoughts. I want you to know what's happening in my brain, and my
-              processes. I love how you feel so energetic to be around, so
-              amazing to walk by you. I don't even know how you like me to be
-              honest because I feel like I look like a hobo sometimes.
-              <br />
-              <h2>Happy 2 Years Baby!</h2>I know there's more in our future, and
-              I'm excited for everything that we will experience together.
-            </p>
+    <div className="card-wrap d-flex align-items-center justify-content-center min-vh-50 p-3">
+      <article className="card letter-card shadow-lg border-0 w-100">
+        <div className="row g-0">
+          <div className="col-md-4 photo-col d-flex flex-column align-items-center justify-content-center p-4">
+            <img
+              src="/images/layla.jpg"
+              alt="layla"
+              className="photo rounded-circle img-fluid"
+            />
+            <div className="heart mt-3" aria-hidden="true" />
+          </div>
+
+          <div className="col-md-8">
+            <div className="card-body p-4 p-lg-5">
+              <h2 className="letter-title mb-4">{letter.title}</h2>
+
+              {letter.paragraphs.map((text, i) => (
+                <p key={i} className="card-text letter-text">
+                  {text}
+                </p>
+              ))}
+
+              <p className="letter-closing fst-italic mb-0">{letter.closing}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   );
 }

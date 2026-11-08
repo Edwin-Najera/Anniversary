@@ -1,13 +1,13 @@
 .heart {
-    background-color: red;
+  width: 48px;
+  background-color: red;
   aspect-ratio: 1;
-  clip-path: 
-    shape(
-      from 50% 91%,
-      line to 90% 50%,
-      arc to 50% 9%  of 1%,
-      arc to 10% 50% of 1%
-    );
+  clip-path: shape(
+    from 50% 91%,
+    line to 90% 50%,
+    arc to 50% 9% of 1%,
+    arc to 10% 50% of 1%
+  );
   animation: heartbeat 1.2s ease-in-out infinite;
 }
 
@@ -20,11 +20,64 @@
   100% { transform: scale(1); }
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lora:ital@0;1&display=swap");
+
+.card-wrap {
+  background: linear-gradient(135deg, #ffd6e7 0%, #e9d5ff 50%, #c7d2fe 100%);
+}
+
+.letter-card {
+  max-width: 960px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  animation: fade-up 0.8s ease-out both;
+}
+
+.photo-col {
+  background: linear-gradient(180deg, rgba(255, 182, 213, 0.45), rgba(199, 210, 254, 0.45));
+}
+
+.photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 30px rgba(190, 80, 140, 0.35);
+}
+
+.letter-title {
+  font-family: "Playfair Display", serif;
+  color: #b0346b;
+}
+
+.letter-text,
+.letter-closing {
+  font-family: "Lora", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3b2f3a;
+}
+
+.letter-closing {
+  color: #b0346b;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-card { animation: none; }
+}
+
 .collage {
   column-count: 2;
   column-gap: 0.5rem;
   background-color: black;
-  
+
 }
 
 @media (min-width: 768px) {
