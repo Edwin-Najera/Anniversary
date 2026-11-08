@@ -1,0 +1,12 @@
+:root {
+    --app-bg : rgb(7, 179, 64);
+    background-color: var(--app-bg);
+}
+
+body {
+    background-color: var(--app-bg);
+}
+
+.d-flex {
+    background-color: var(--app-bg);
+}

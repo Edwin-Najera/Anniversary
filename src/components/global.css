@@ -8,4 +8,40 @@
       arc to 50% 9%  of 1%,
       arc to 10% 50% of 1%
     );
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  14%  { transform: scale(1.15); }
+  28%  { transform: scale(1); }
+  42%  { transform: scale(1.15); }
+  70%  { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+.collage {
+  column-count: 2;
+  column-gap: 0.5rem;
+  background-color: black;
+  
+}
+
+@media (min-width: 768px) {
+  .collage { column-count: 3; }
+}
+
+@media (min-width: 992px) {
+  .collage { column-count: 4; }
+}
+
+.collage-item {
+  break-inside: avoid;
+  margin: 0 0 0.5rem;
+}
+
+.collage-item img {
+  width: 100%;
+  display: block;
+  border-radius: 0.5rem;
 }
