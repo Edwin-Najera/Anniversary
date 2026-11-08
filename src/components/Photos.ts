@@ -4,9 +4,19 @@ export interface Photo {
   alt: string;
 }
 
-export const photos: Photo[] = [
-  { id: 1, src: "/images/photo1.jpg", alt: "Photo 1" },
-  { id: 2, src: "/images/photo2.jpg", alt: "Photo 2" },
-  { id: 3, src: "/images/photo3.jpg", alt: "Photo 3" },
-  // add more
-];
+const files = import.meta.glob(
+  "/src/assets/public/images/*.{jpg,jpeg,png,webp,gif,JPG,JPEG,PNG,WEBP,GIF}",
+  { eager: true, query: "?url", import: "default" },
+) as Record<string, string>;
+
+export const photos: Photo[] = Object.entries(files)
+  .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+  .map(([path, src], i) => ({
+    id: i,
+    src,
+    alt:
+      path
+        .split("/")
+        .pop()
+        ?.replace(/\.[^.]+$/, "") ?? `Photo ${i + 1}`,
+  }));

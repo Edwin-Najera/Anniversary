@@ -1,4 +1,5 @@
 import { letter } from "./letter";
+import beautiful from "./photos/Beautiful.jpg";
 import "./global.css";
 
 function Card() {
@@ -8,7 +9,7 @@ function Card() {
         <div className="row g-0">
           <div className="col-md-4 photo-col d-flex flex-column align-items-center justify-content-center p-4">
             <img
-              src="/images/layla.jpg"
+              src={beautiful}
               alt="layla"
               className="photo rounded-circle img-fluid"
             />

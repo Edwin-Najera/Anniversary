@@ -7,8 +7,8 @@ function App() {
   const [displayPhotos, setDisplayPhotos] = useState(false);
 
   return (
-    <div className="vh-100 overflow-hidden d-flex flex-column bg-danger-subtle">
-      <main className="flex-grow-1 overflow-hidden d-flex align-items-center justify-content-center p-3">
+    <div className="vh-25 d-flex flex-column bg-danger-subtle">
+      <main className="flex-grow-1 d-flex align-items-center justify-content-center p-3">
         <Card />
       </main>
 
