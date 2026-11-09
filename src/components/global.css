@@ -124,3 +124,7 @@
   display: block;
   border-radius: 0.5rem;
 }
+
+.show {
+  display: block !important;
+}

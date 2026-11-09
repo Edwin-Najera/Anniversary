@@ -1,5 +1,6 @@
 import { letter } from "./letter";
 import beautiful from "./photos/Beautiful.jpg";
+import bum from "./photos/bum.jpeg";
 import "./global.css";
 
 function Card() {
@@ -13,7 +14,12 @@ function Card() {
               alt="layla"
               className="photo rounded-circle img-fluid"
             />
-            <div className="heart mt-3" aria-hidden="true" />
+            <div className="heart my-3" aria-hidden="true" />
+            <img
+              src={bum}
+              alt="layla"
+              className="photo rounded-circle img-fluid"
+            />
           </div>
 
           <div className="col-md-8">
